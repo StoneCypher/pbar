@@ -1,6 +1,12 @@
 
 'use strict';
 
+/********
+ *
+ *  Progress Bar
+ *
+ */
+
 class pbar {
 
 
@@ -23,7 +29,7 @@ class pbar {
     this.opts = {};
     Object.keys(defaults).map(key => this.opts[key] = opts[key] || defaults[key]);
 
-    if (typeof this.opts.target === 'string') { console.log(this.opts.target); this.opts.target = document.getElementById(this.opts.target); console.log(this.opts.target); }
+    if (typeof this.opts.target === 'string') { this.opts.target = document.getElementById(this.opts.target); }
 
     this.frame = document.createElement('div');
     this.bar   = document.createElement('div'); this.frame.appendChild(this.bar);
