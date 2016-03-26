@@ -25,7 +25,7 @@ Ships with ES6 packaging, ES5 packaging that works in-browser and in-node, and m
 ```html
 <!doctype html><html><head>
 
-  <script defer src="../build/pbar.es5.min.js" type="text/javascript"></script>
+  <script defer src="../dist/pbar.es5.min.js" type="text/javascript"></script>
   <script type="text/javascript">
 
     var pbar, pb;
