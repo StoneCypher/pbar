@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "pbar/src/pbar.js~pbar",
+    "class/src/pbar.js~pbar.html",
+    "<span>pbar</span> <span class=\"search-result-import-path\">pbar/src/pbar.js</span>",
+    "class"
+  ],
+  [
     "builtinexternal/ecmascriptexternal.js~array",
     "external/index.html",
     "BuiltinExternal/ECMAScriptExternal.js~Array",
@@ -334,5 +340,125 @@ window.esdocSearchIndex = [
     "file/src/pbar.js.html",
     "src/pbar.js",
     "file"
+  ],
+  [
+    "src/pbar.js~pbar#background",
+    "class/src/pbar.js~pbar.html#instance-get-background",
+    "src/pbar.js~pbar#background",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#background",
+    "class/src/pbar.js~pbar.html#instance-set-background",
+    "src/pbar.js~pbar#background",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#bar",
+    "class/src/pbar.js~pbar.html#instance-member-bar",
+    "src/pbar.js~pbar#bar",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#border",
+    "class/src/pbar.js~pbar.html#instance-set-border",
+    "src/pbar.js~pbar#border",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#border",
+    "class/src/pbar.js~pbar.html#instance-get-border",
+    "src/pbar.js~pbar#border",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#bs",
+    "class/src/pbar.js~pbar.html#instance-method-bs",
+    "src/pbar.js~pbar#bs",
+    "method"
+  ],
+  [
+    "src/pbar.js~pbar#color",
+    "class/src/pbar.js~pbar.html#instance-get-color",
+    "src/pbar.js~pbar#color",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#color",
+    "class/src/pbar.js~pbar.html#instance-set-color",
+    "src/pbar.js~pbar#color",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#constructor",
+    "class/src/pbar.js~pbar.html#instance-constructor-constructor",
+    "src/pbar.js~pbar#constructor",
+    "method"
+  ],
+  [
+    "src/pbar.js~pbar#frame",
+    "class/src/pbar.js~pbar.html#instance-member-frame",
+    "src/pbar.js~pbar#frame",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#fs",
+    "class/src/pbar.js~pbar.html#instance-method-fs",
+    "src/pbar.js~pbar#fs",
+    "method"
+  ],
+  [
+    "src/pbar.js~pbar#height",
+    "class/src/pbar.js~pbar.html#instance-set-height",
+    "src/pbar.js~pbar#height",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#height",
+    "class/src/pbar.js~pbar.html#instance-get-height",
+    "src/pbar.js~pbar#height",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#opts",
+    "class/src/pbar.js~pbar.html#instance-member-opts",
+    "src/pbar.js~pbar#opts",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#position",
+    "class/src/pbar.js~pbar.html#instance-get-position",
+    "src/pbar.js~pbar#position",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#target",
+    "class/src/pbar.js~pbar.html#instance-get-target",
+    "src/pbar.js~pbar#target",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#transition",
+    "class/src/pbar.js~pbar.html#instance-set-transition",
+    "src/pbar.js~pbar#transition",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#transition",
+    "class/src/pbar.js~pbar.html#instance-get-transition",
+    "src/pbar.js~pbar#transition",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#value",
+    "class/src/pbar.js~pbar.html#instance-set-value",
+    "src/pbar.js~pbar#value",
+    "member"
+  ],
+  [
+    "src/pbar.js~pbar#value",
+    "class/src/pbar.js~pbar.html#instance-get-value",
+    "src/pbar.js~pbar#value",
+    "member"
   ]
 ]

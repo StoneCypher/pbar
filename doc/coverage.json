@@ -1,6 +1,33 @@
 {
-  "coverage": "0%",
-  "expectCount": 0,
-  "actualCount": 0,
-  "files": {}
+  "coverage": "4.76%",
+  "expectCount": 21,
+  "actualCount": 1,
+  "files": {
+    "src/pbar.js": {
+      "expectCount": 21,
+      "actualCount": 1,
+      "undocumentLines": [
+        54,
+        53,
+        35,
+        57,
+        56,
+        48,
+        50,
+        51,
+        14,
+        34,
+        47,
+        59,
+        60,
+        29,
+        65,
+        68,
+        71,
+        72,
+        62,
+        63
+      ]
+    }
+  }
 }

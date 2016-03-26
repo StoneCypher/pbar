@@ -20,7 +20,7 @@ var fs           = require('fs'),
 
 
 var dirs         = { 'build': './build', 'dist': './dist', 'doc': './doc' },
-    babel_cfg    = { "presets": [ "es2015" ], "sourceMaps": false };
+    babel_cfg    = { 'presets': [ 'es2015' ] };
 
 
 
@@ -28,7 +28,7 @@ var production   = false,
 
     errorHandler = function(err) {
       console.log(err.toString());
-      this.emit("end");
+      this.emit('end');
     };
 
 
@@ -58,13 +58,14 @@ gulp.task('clean', function(done) {
 
 gulp.task('browserify', ['babel'], function() {
 
-  var browserifyConfig = { 'entries' : ['build/pbar.es5.js'] },
-      bpack            = browserify(browserifyConfig, { "debug" : !production });
+  var browserifyConfig = {}, 
+      bpack            = browserify(browserifyConfig, { 'debug' : !production });
 
   return bpack
+    .require('./build/pbar.es5.js', { 'expose' : 'pbar' })
     .bundle()
-    .on("error", errorHandler)
-    .pipe(source("pbar.es5.js"))
+    .on('error', errorHandler)
+    .pipe(source('pbar.es5.js'))
     .pipe(gulp.dest('./build'));
 
 });
@@ -79,9 +80,9 @@ gulp.task('closure5', ['browserify'], function() {
 
     .pipe(closure( {
       compilerPath: 'node_modules/closure-compiler/node_modules/google-closure-compiler/compiler.jar',
-      fileName: 'pbar.min.es5.js'
+      fileName: 'pbar.es5.min.js'
     } ))
-
+    
     .pipe(gulp.dest('./build'));
 
 });
@@ -90,6 +91,10 @@ gulp.task('closure5', ['browserify'], function() {
 
 
 
+// temp disabled - "export {foo}" kills closure compiler in es6 mode
+// https://github.com/google/closure-compiler/issues/1636
+// appears to be fixed in unreleased https://github.com/google/closure-compiler/commit/d62eb21375427b25b87490cedd833ce4f6cd0371
+
 gulp.task('closure6', ['browserify'], function() {
 
   return gulp.src('src/pbar.js')
@@ -97,7 +102,7 @@ gulp.task('closure6', ['browserify'], function() {
     .pipe(closure( {
       compilerPath: 'node_modules/closure-compiler/node_modules/google-closure-compiler/compiler.jar',
       compilerFlags: {'language_in':'ECMASCRIPT6'},
-      fileName: 'pbar.min.es6.js'
+      fileName: 'pbar.es6.min.js'
     } ))
 
     .pipe(gulp.dest('./build'));
@@ -125,8 +130,8 @@ gulp.task('make-dirs', ['clean'], function(done) {
 
 gulp.task('doc', ['make-dirs'], function() {
 
-  gulp.src("./src")
-    .pipe(esdoc({ destination: "./doc" }));
+  return gulp.src('./src')
+    .pipe(esdoc({ destination: './doc' }));
 
 });
 
@@ -151,4 +156,4 @@ gulp.task('build', ['browserify'], function() {
 
 
 
-gulp.task('default', ['closure5', 'closure6', 'doc']);
+gulp.task('default', ['closure5', /* 'closure6', */ 'browserify', 'doc']);

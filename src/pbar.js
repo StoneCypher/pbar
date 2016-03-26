@@ -73,6 +73,8 @@ class pbar {
 
 
 
-}
+};
 
-// export {pbar};
+
+
+export {pbar};
