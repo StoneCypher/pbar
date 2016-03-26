@@ -49,3 +49,19 @@ Ships with ES6 packaging, ES5 packaging that works in-browser and in-node, and m
 
 </script></head><body></body></html>
 ```
+
+## Options
+
+`pbar` with no options, or with an empty object, is legal.  `pbar` will ignore options it doesn't recognize.
+
+`pbar` writes inline styles without quoting.  ***Options are subject to injections***.  <u>Do not use `pbar` with user generated content</u>.
+
+Options that `pbar` does recognize:
+ * `background` is the value of the `background` property on the master frame tag.  Default is transparent.
+ * `border` is the value of the `border` property on the tag drawing the frame.  Default is `0px solid transparent`.
+ * `color` is the value of the `background` property on the tag drawing the bar.  Generally this will be a color, but this very easily could be an image, or whatever.  Default is #40B3CC, a light blue.
+ * `height` is the value of the `height` property of the frame tag.  Default is `'4px'`.  This is a CSS string, and therefore requires a unit unless `0`.
+ * `value` is the value of the `width` property of the bar tag.  Normally this would be expressed as a percentage.  Default is `50%`, which is kind of trolly, but nice for newcomers.
+ * `target` is the identity of the bar's host.  Unlike most values, this isn't a CSS property.  Instead, it's either a DOM reference like you'd get from `document.getElementById()`, or a string which will be looked up as an `id` by the library.  If no `target` is given, `document.body` is assumed.
+ * `position` is the `position` of the frame tag.  Default is `fixed` if no `target` is given, or `absolute` if one is.
+ * `transition` is the value of the `transition` property, but with the string `'width '` prepended to the front.  Generally provide the time and/or the easing function in CSS format, such as `'0.35s'` or `'0.5s easeOutSine'`.  Default is `'0.35s'`.
