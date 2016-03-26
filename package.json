@@ -1,0 +1,29 @@
+{
+  "name": "pbar",
+  "version": "1.0.0",
+  "description": "Tiny progress bar widget in css and js es5",
+  "main": "pbar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoneCypher/pbar.git"
+  },
+  "keywords": [
+    "progress",
+    "bar",
+    "progressbar",
+    "css2",
+    "es6",
+    "es2015",
+    "ecmascript2015",
+    "tiny"
+  ],
+  "author": "John Haugeland <stonecypher@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StoneCypher/pbar/issues"
+  },
+  "homepage": "https://github.com/StoneCypher/pbar#readme"
+}
