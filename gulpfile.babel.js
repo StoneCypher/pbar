@@ -19,7 +19,7 @@ var fs           = require('fs'),
 
 
 
-var dirs         = { 'build': './build', 'dist': './dist', 'doc': './doc' },
+var dirs         = { 'dist': './dist', 'doc': './doc' },
     babel_cfg    = { 'presets': [ 'es2015' ] };
 
 
@@ -40,7 +40,7 @@ gulp.task('babel', ['setup'], function() {
   return gulp.src(['src/pbar.js'])
     .pipe(babel(babel_cfg))
     .pipe(rename('pbar.es5.js'))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./dist'));
 
 });
 
@@ -49,7 +49,7 @@ gulp.task('babel', ['setup'], function() {
 
 
 gulp.task('clean', function(done) {
-  del(['./build', './dist']).then(() => done());
+  del(['./doc', './dist']).then(() => done());
 });
 
 
@@ -62,11 +62,11 @@ gulp.task('browserify', ['babel'], function() {
       bpack            = browserify(browserifyConfig, { 'debug' : !production });
 
   return bpack
-    .require('./build/pbar.es5.js', { 'expose' : 'pbar' })
+    .require('./dist/pbar.es5.js', { 'expose' : 'pbar' })
     .bundle()
     .on('error', errorHandler)
     .pipe(source('pbar.es5.js'))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./dist'));
 
 });
 
@@ -74,16 +74,16 @@ gulp.task('browserify', ['babel'], function() {
 
 
 
-gulp.task('closure5', ['browserify'], function() {
+gulp.task('closure5', ['build'], function() {
 
-  return gulp.src('build/pbar.es5.js')
+  return gulp.src('dist/pbar.es5.js')
 
     .pipe(closure( {
       compilerPath: 'node_modules/closure-compiler/node_modules/google-closure-compiler/compiler.jar',
       fileName: 'pbar.es5.min.js'
     } ))
     
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./dist'));
 
 });
 
@@ -95,7 +95,7 @@ gulp.task('closure5', ['browserify'], function() {
 // https://github.com/google/closure-compiler/issues/1636
 // appears to be fixed in unreleased https://github.com/google/closure-compiler/commit/d62eb21375427b25b87490cedd833ce4f6cd0371
 
-gulp.task('closure6', ['browserify'], function() {
+gulp.task('closure6', ['build'], function() {
 
   return gulp.src('src/pbar.js')
 
@@ -105,7 +105,7 @@ gulp.task('closure6', ['browserify'], function() {
       fileName: 'pbar.es6.min.js'
     } ))
 
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./dist'));
 
 });
 
@@ -128,7 +128,7 @@ gulp.task('make-dirs', ['clean'], function(done) {
 
 
 
-gulp.task('doc', ['make-dirs'], function() {
+gulp.task('doc', ['build'], function() {
 
   return gulp.src('./src')
     .pipe(esdoc({ destination: './doc' }));
@@ -147,7 +147,7 @@ gulp.task('setup', ['make-dirs']);
 
 gulp.task('build', ['browserify'], function() {
 
-  return gulp.src(['build/pbar.js', 'build/pbar.es5.js'])
+  return gulp.src(['src/pbar.js'])
     .pipe(gulp.dest('./dist'));
 
 });
@@ -156,4 +156,4 @@ gulp.task('build', ['browserify'], function() {
 
 
 
-gulp.task('default', ['closure5', /* 'closure6', */ 'browserify', 'doc']);
+gulp.task('default', ['closure5', /* 'closure6', */ 'build', 'doc']);

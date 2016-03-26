@@ -38,7 +38,46 @@
 </nav>
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="pbar">pbar</h1>
-<p>tiny progress bar widget in css3 and js es6 / es2015</p>
+<p>Tiny progress bar widget in css3 and js es6 / es2015.  Designed for ease of use.</p>
+<p>Add to your site with two lines of code:</p>
+<p><code>ES5</code></p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;script defer src=&quot;pbar.es5.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script defer type=&quot;text/javascript&quot;&gt;var pb = new require(&apos;pbar&apos;).pbar;&lt;/script&gt;</code>
+</code></pre>
+<p><code>ES6</code></p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;script defer src=&quot;pbar.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script defer type=&quot;text/javascript&quot;&gt;import {pbar} from &apos;./pbar.js&apos;;&lt;/script&gt;</code>
+</code></pre>
+<p>No production dependencies, assets, globals, or primitive decoration.  Source is 2.1k.  Minified ES5 with <code>require()</code> packaging is 2.6k.  Works in browsers, node, and embedded browsers.</p>
+<p>You have control of color, background color and presence, location (defaults to fixed browser top,) animation transition, and many other things that most people won&apos;t actually care about in practice.</p>
+<p>Ships with ES6 packaging, ES5 packaging that works in-browser and in-node, and minified ES5.  (We&apos;re <a href="https://github.com/google/closure-compiler/commit/d62eb21375427b25b87490cedd833ce4f6cd0371">waiting on a closure compiler patch</a> before es6 minification will work correctly.)</p>
+<h2 id="tl-dr">tl;dr</h2>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;
+
+  &lt;script defer src=&quot;../build/pbar.es5.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+
+    var pbar, pb;
+    var pb;
+
+    window.onload = function() {                       // when the page loads
+      pbar     = require(&apos;pbar&apos;).pbar;                 // load the library
+      pb       = new pbar({color:&apos;red&apos;, value:&apos;0%&apos;});  // make a new progress bar, initially red and empty
+      pb.value = &apos;20%&apos;;                                // immediately animate to 20%
+    }
+
+    window.setTimeout(function() {                     // when the timeout fires
+      pb.color = &apos;#aa0&apos;;                               // change the color to dark yellow
+      pb.value = &apos;80%&apos;;                                // set the value to 80%
+    }, 2000);                                          // the timeout fires in two seconds
+
+    window.setTimeout(function() {                     // when the timeout fires
+      pb.color = &apos;green&apos;;                              // change the color to green
+      pb.value = &apos;100%&apos;;                               // set the value to 100%
+    }, 4000);                                          // the timeout fires in four seconds
+
+&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code>
+</code></pre>
 </div>
 </div>
 
