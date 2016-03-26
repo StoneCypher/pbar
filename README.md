@@ -31,12 +31,12 @@ Ships with ES6 packaging, ES5 packaging that works in-browser and in-node, and m
     }
 
     window.setTimeout(function() {                     // when the timeout fires
-      pb.color   = '#aa0';                             // change the color to dark yellow
-      pb.value   = '80%';                              // set the value to 80%
+      pb.color = '#aa0';                               // change the color to dark yellow
+      pb.value = '80%';                                // set the value to 80%
     }, 2000);                                          // the timeout fires in two seconds
 
     window.setTimeout(function() {                     // when the timeout fires
-      pb.color   = 'green';                            // change the color to green
+      pb.color = 'green';                              // change the color to green
       pb.value = '100%';                               // set the value to 100%
     }, 4000);                                          // the timeout fires in four seconds
 
