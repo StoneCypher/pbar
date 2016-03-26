@@ -3,9 +3,16 @@ Tiny progress bar widget in css3 and js es6 / es2015.  Designed for ease of use.
 
 Add to your site with two lines of code:
 
+`ES5`
 ```html
 <script defer src="pbar.es5.min.js" type="text/javascript"></script>
 <script defer type="text/javascript">var pb = new require('pbar').pbar;</script>
+```
+
+`ES6`
+```html
+<script defer src="pbar.js" type="text/javascript"></script>
+<script defer type="text/javascript">import {pbar} from './pbar.js';</script>
 ```
 
 No production dependencies, assets, globals, or primitive decoration.  Source is 2.1k.  Minified ES5 with `require()` packaging is 2.6k.  Works in browsers, node, and embedded browsers.
