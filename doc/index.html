@@ -54,7 +54,7 @@
 <h2 id="tl-dr">tl;dr</h2>
 <pre><code class="lang-html"><code class="source-code prettyprint">&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;
 
-  &lt;script defer src=&quot;../build/pbar.es5.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+  &lt;script defer src=&quot;../dist/pbar.es5.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot;&gt;
 
     var pbar, pb;
@@ -78,6 +78,22 @@
 
 &lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code>
 </code></pre>
+<h2 id="options">Options</h2>
+<p><code>pbar</code> with no options, or with an empty object, is legal.  <code>pbar</code> will ignore options it doesn&apos;t recognize.</p>
+<p><code>pbar</code> writes inline styles without quoting.  <strong><em>Options are subject to injections</em></strong>.  &lt;u&gt;Do not use <code>pbar</code> with user generated content&lt;/u&gt;.</p>
+<p>Options that <code>pbar</code> does recognize:</p>
+<ul>
+<li><code>background</code> is the value of the <code>background</code> property on the master frame tag.  Default is transparent.</li>
+<li><code>border</code> is the value of the <code>border</code> property on the tag drawing the frame.  Default is <code>0px solid transparent</code>.</li>
+<li><code>color</code> is the value of the <code>background</code> property on the tag drawing the bar.  Generally this will be a color, but this very easily could be an image, or whatever.  Default is #40B3CC, a light blue.</li>
+<li><code>height</code> is the value of the <code>height</code> property of the frame tag.  Default is <code>&apos;4px&apos;</code>.  This is a CSS string, and therefore requires a unit unless <code>0</code>.</li>
+<li><code>value</code> is the value of the <code>width</code> property of the bar tag.  Normally this would be expressed as a percentage.  Default is <code>50%</code>, which is kind of trolly, but nice for newcomers.</li>
+<li><code>target</code> is the identity of the bar&apos;s host.  Unlike most values, this isn&apos;t a CSS property.  Instead, it&apos;s either a DOM reference like you&apos;d get from <code>document.getElementById()</code>, or a string which will be looked up as an <code>id</code> by the library.  If no <code>target</code> is given, <code>document.body</code> is assumed.</li>
+<li><code>position</code> is the <code>position</code> of the frame tag.  Default is <code>fixed</code> if no <code>target</code> is given, or <code>absolute</code> if one is.</li>
+<li><code>transition</code> is the value of the <code>transition</code> property, but with the string <code>&apos;width &apos;</code> prepended to the front.  Generally provide the time and/or the easing function in CSS format, such as <code>&apos;0.35s&apos;</code> or <code>&apos;0.5s easeOutSine&apos;</code>.  Default is <code>&apos;0.35s&apos;</code>.</li>
+</ul>
+<h1 id="polemic-neckbeard-">Polemic :neckbeard:</h1>
+<p><code>pbar</code> is MIT licensed, because viral licenses and newspeak language modification are evil. Free is <strong><em>only</em></strong> free when it&apos;s free for everyone.</p>
 </div>
 </div>
 

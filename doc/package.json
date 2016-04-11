@@ -1,6 +1,6 @@
 {
   "name": "pbar",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Tiny progress bar widget in css and js es5",
   "main": "pbar.js",
   "scripts": {
@@ -32,10 +32,12 @@
     "browserify": "^13.0.0",
     "closure-compiler": "^0.2.12",
     "del": "^2.2.0",
+    "google-closure-compiler": "^20160315.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-closure-compiler": "^0.4.0",
     "gulp-esdoc": "^0.2.0",
+    "gulp-rename": "^1.2.2",
     "vinyl-source-stream": "^1.1.0"
   }
 }

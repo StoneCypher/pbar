@@ -65,3 +65,10 @@ Options that `pbar` does recognize:
  * `target` is the identity of the bar's host.  Unlike most values, this isn't a CSS property.  Instead, it's either a DOM reference like you'd get from `document.getElementById()`, or a string which will be looked up as an `id` by the library.  If no `target` is given, `document.body` is assumed.
  * `position` is the `position` of the frame tag.  Default is `fixed` if no `target` is given, or `absolute` if one is.
  * `transition` is the value of the `transition` property, but with the string `'width '` prepended to the front.  Generally provide the time and/or the easing function in CSS format, such as `'0.35s'` or `'0.5s easeOutSine'`.  Default is `'0.35s'`.
+
+
+
+Polemic :neckbeard:
+===================
+
+`pbar` is MIT licensed, because viral licenses and newspeak language modification are evil. Free is ***only*** free when it's free for everyone.
